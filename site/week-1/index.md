@@ -1,0 +1,14 @@
+# Week 1
+
+## Goals
+- Get to know eachother and learn everyone's name
+- Become comfortable:
+    - using the Python interpreter and
+    - executing scripts (in files)
+- Create a small project
+
+## Materials
+```{toctree}
+lecture-notes
+exercises
+```
