@@ -1,9 +1,10 @@
 develop:
 	pip install -r requirements.txt
 
-html: site/**/*  # All files inside site/
+html:
 	rm -rf html
 	python -m sphinx site html
+	python -m sphinx site html/instructor
+	rm html/instructor/_static/student.css
 
-clean:
-	rm -rf html
+.PHONY: html
