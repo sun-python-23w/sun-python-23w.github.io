@@ -27,6 +27,8 @@ html_theme_options = {
         "color-brand-primary": "#f45429",
         "color-brand-content": "#724bff",
         "color-highlight-on-target": "#FFD9CD",
+        "color-admonition-title--important": "#FF52A9",
+        "color-admonition-title-background--important": "#FF52A925",
     },
     "dark_css_variables": {
         "color-brand-primary": "#ffaa22",
