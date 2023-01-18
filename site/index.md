@@ -1,7 +1,7 @@
 # Beginning Python (Winter 2023)
 
 ```{important}
-🧑‍🏫 This is the instructor version of the course site
+🧑‍🏫 This is the instructor version of the course site. Go to the [student site](http://julianfortune.com/beginning-python-23w).
 ```
 
 January 24th - February ???
