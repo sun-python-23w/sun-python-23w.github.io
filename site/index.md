@@ -14,12 +14,12 @@ Programming in Python® for Beginners (6-8) taught by Julian Fortune.
 Learn Python®—a powerful, widely used, and versatile programming language—in this fun, hands-on class for new programmers. Design a trivia program and games like guess my number, word jumble, and hangman all while learning concepts that apply to all programming languages.
 
 ## Meetings
-- Tuesdays from 4 PM - 5:30 PM
+- Tuesdays from 4-5:30pm
 - Jan. 24 - March 7
 
 ## Location
-Kellogg Middle School
 
+Kellogg Middle School\
 3330 SE 69th Avenue, Portland OR 97206
 
 
