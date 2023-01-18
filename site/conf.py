@@ -3,7 +3,7 @@
 
 # -- General configuration ------------------------------------------------
 
-extensions = ["myst_parser"]
+extensions = ["myst_parser", "sphinx_toolbox.collapse"]
 
 pygments_style = "default"
 pygments_dark_style = "gruvbox-dark"
@@ -18,8 +18,8 @@ html_title = "Beginning Python"
 html_theme = "furo"
 language = "en"
 
-# html_static_path = ["../_static"]
-# html_css_files = ["custom.css"]
+html_static_path = ["./static"]
+html_css_files = ["custom.css", "student.css"]
 
 # Theme similar to smithy.io and gruvbox with help from https://m2.material.io/design/color/the-color-system.html#tools-for-picking-colors
 html_theme_options = {
@@ -31,6 +31,8 @@ html_theme_options = {
     "dark_css_variables": {
         "color-brand-primary": "#ffaa22",
         "color-brand-content": "#7aadd4",
-        "color-highlight-on-target": "#1e2124ff",
+        "color-highlight-on-target": "#ffaa2233",
+        "color-admonition-title--important": "#FF52A9",
+        "color-admonition-title-background--important": "#FF52A925",
     },
 }

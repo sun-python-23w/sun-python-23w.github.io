@@ -9,6 +9,8 @@
 
 ## Materials
 ```{toctree}
+:maxdepth: 1
 lecture-notes
-exercises
+lab-1
+lab-2
 ```

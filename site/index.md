@@ -1,26 +1,22 @@
 # Beginning Python (Winter 2023)
 
-## About
-
 January 24th - February ???
 
-### Contact
-
-<!-- TODO: Make an email for teaching stuff ? Google contact form ? -->
-
-
-> 🚧 Work in progress...
-
-
-
-## Contents
-
 ```{tip}
-You can also navigate using the side bar on the left
+Navigate using the side bar on the left
+```
+
+<!-- Defines the side bar -->
+
+```{toctree}
+:hidden:
+syllabus
 ```
 
 ```{toctree}
+:caption: Materials
 :maxdepth: 3
+:hidden:
 week-1/index
 ```
 

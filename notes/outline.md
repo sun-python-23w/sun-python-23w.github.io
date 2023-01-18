@@ -2,37 +2,6 @@
 
 ## First Day
 
-- beginning of class survey?
-
-15min
-- self intro
-- course overview
-- discuss thinking about the terminal as an "interface" ?
-
-10min
-- learning replit / vscode
-- learning python command line
-- strings
-- printing
-
-15min
-- PROJECT: "Hello, world"
-
-15-20min
-- input
-- variables
-    - naming
-- string operations (incl. interpolation ?)
-
-30min
-- PROJECT: mad libs
-    - stretch: ascii art and ANSI colors ?
-    - stretch: ???
-
-5min
-- save some time to wrap up...?
-
----
 
 ## Second Day -- numbers and modules
 
