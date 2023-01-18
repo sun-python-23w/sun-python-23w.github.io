@@ -1,5 +1,9 @@
 # Beginning Python (Winter 2023)
 
+```{important}
+🧑‍🏫 This is the instructor version of the course site
+```
+
 January 24th - February ???
 
 ```{tip}
