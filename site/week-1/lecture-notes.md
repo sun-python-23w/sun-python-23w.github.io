@@ -1,60 +1,63 @@
-# Lecture Notes
-<!-- 90 minutes total; 15 minute warm-up and 45 minute lab? -->
+# Lecture 1 — Introduction to Python
 
+```{important}
 ## Warm up
 
-<!-- TODO: Need to do some sort of 'community building' thing for ~15 minutes-->
+<!-- TODO: Need to do some sort of 'community building' thing for ~10 minutes-->
 
 - Circle up and introduce names + some fun fact
-- Name point & swap game
+- Name point & swap game ?
 
+Timecheck: 10 minutes
 
-```{important}
-TIMECHECK: 10 minutes
-```
+## Introduction
 
-## Introduction (5min)
-
-- Instructor introduction
+- Introduce myself
+    - School
+    - Current job
+    - General background
 - Course overview
-- Discuss thinking about the terminal as an "interface" ?
-    - Colors
-    - Emojis
+    - This is my first time teaching this
+    - Feedback form on the website
+    - Structure of lecture / labs
+    - What to do if stuck / confused
+        - Check the lecture notes
+        - Ask someone next to you
+        - Raise hand / get my attention
+    - ???
 
-```{important}
-⏰ 15 minutes
+Timecheck: 15 minutes
 ```
-
-## Introduction to Python
 
 (vscode)=
-### VSCode
+## VSCode
 
 VSCode is a popular choice of _integrated development environment_ (IDE) for developing Python.
 
-![VSCode Interface with markings](./images/vscode-interface.png)
+![VSCode Interface](./images/vscode-interface.png)
 
-The interface has 3 main regions:
+The interface has 3 main regions, shown in purple, green, and orange:
 
-![VSCode Interface with markings](./images/vscode-interface-annotated.png)
+![VSCode Interface with markings to show the main regions](./images/vscode-interface-annotated.png)
 
-
-1. The file explorer (purple)
+1. The file explorer (purple 🟪)
     - Shows a tree view of the current folder
     - Selecting a file here will open it in the editor
     - Can be opened/closed by pressing either button circled in purple
-1. The editor (green)
+1. The editor (green 🟩)
     - Where we interact with files and write code
-1. Console area (orange)
-    - Has 4 different tabs but we will only use the "Terminal" (red)
+1. Console area (orange 🟧)
+    - Shows outputs from our code
     - Can be opened/closed by clicking the top right button circled in orange
+    - Has 4 different tabs but we will only use the "Terminal" tab (red 🟥)
+        - The terminal lets us run commands and see output
 
 Other elements of the interface:
 - The arrows in the top bar (<- ->) navigate back / forward through editors
 - The gear (⚙️) in the bottom left corner opens settings
 
 
-### The Interactive Interpreter (Console)
+## The Interactive Interpreter (Console)
 
 Python has an interactive interpreter that allows you to type code and immediately see the result of evaluating that line.
 
@@ -75,7 +78,7 @@ Here’s an example of adding two numbers in the interpreter:
 
 Pressing the return key tells Python to evaluate the line.
 
-#### Exiting
+### Exiting
 
 When you are finished using the interpreter, type `exit()` and press the return key to exit the interpreter.
 
@@ -83,11 +86,62 @@ When you are finished using the interpreter, type `exit()` and press the return 
 >>> exit()
 ```
 
-### Strings
+## Strings
+
+### Writing
+
+### Combining strings
+
+We can combine multiple strings into one using the addition operator (aka "the plus sign"), `+`:
+```python
+>>> "abc" + "def"
+'abcdef'
+```
+
+This might be useful for constructing a date:
+```python
+>>> "January" + "16th" + "2023"
+'January16th2023'
+```
+
+We can add some spaces to make it look a little nicer:
+```python
+>>> "January" + " " + "16th" + ", " + "2023"
+'January 16th, 2023'
+```
+
+### Can we add strings and numbers?
+
+What happens if we try to build a date using a number?
+
+```python
+>>> "January" + 16 + "th"
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: can only concatenate str (not "int") to str
+```
+
+We get an error! The first two lines tell us _where_ the error occurred (not very meaningful to us becuase we know it was the line we just entered), and the last line explains what the error was, a _TypeError_, with a message to elaborate, "can only concatenate str (not 'int') to str".
+
+This is telling us that the plus operator, `+`, is not defined when the thing (_operand_) on the left is a string, and the thing on the right is a number. So we cannot use the `+` for strings and numbers.
+
+Generally, when a situation arises during the execution of our code where the behavior is not defined, the best choice is to simple stop and throw an error.
+
+However, there is a simple way to combine numbers and strings...
+
+### Interpolation with `f`-strings
+
+_String interpolation_ allows us to insert things (literals, variables, or expressions) into our strings:
+
+```python
+>>> name = "Yoda"
+>>> height = 0.66  # meters
+>>> f"{name} is {height * 39.37} inches tall and {900} years old!"
+'Yoda is 25.9842 inches tall and 900 years old!'
+```
 
 
-
-### Scripts — Writing and Running Files
+## Scripts — Writing and Running Files
 
 The interactive interpreter is a convenient way to experiment and iterate on ideas quickly, but is challenging to reuse.
 
@@ -98,7 +152,7 @@ Alternatively, we can write a series of lines in a file and then evaluate that f
     From the command line, run `python <file name>`, where `<file name>` is the path to the file you authored.
 
 
-### Printing
+## Printing
 
 Unlike the interactive interpreter, running a script does not automatically display a value. In order to display values we can use the `print` function. This script:
 
@@ -116,18 +170,16 @@ Hi!
 `print` is a function, which we *invoke* (tell it to run) using parenthesis.
 ```
 
-> ⏰ 30 minutes
+```{important}
+TIMECHECK: 30 minutes
+```
 
-## Lab 1: Hello, world
 
+## Variables
 
-> ⏰ 40 minutes
+TODO: What are variables and why do we need them?
 
-## Variables and input
-
-### Variables
-
-#### Naming Rules
+### Naming Rules
 
 1. Variable names can contain any of these characters:
     - Lowercase letters (`a`, `b`, … , `z`)
@@ -148,18 +200,14 @@ Hi!
     ```
 
 
-##### Examples
+#### Examples
 
 Here are some examples of valid names:
 
 ```python
 x = 1
 count = 2
-Amount = 23
-TOTAL = 100
-_power_level = 9001
-person1 = "jeremy"
-person2 = "bob"
+power_level = 9001
 ```
 
 Here are some names that will cause errors
@@ -170,32 +218,31 @@ class = "fun"    # The name `class` is reserved by Python
 my-variable = 1  # The hyphen will be interpreted as a minus sign
 ```
 
-#### Naming Conventions
+### Naming Conventions
 
-...
-
-### Advanced Strings
-
-- string operations (incl. interpolation ?)
+- Generally we write variable names all lower case letters
+- If a variable name contains multiple words we connect them with underscores—we can't use spaces or python would think each word was a variable name:
+    ```python
+    days_in_a_year = 365
+    ```
 
 
 <!-- May or may not get to this ? -->
 
-### Input
+## ---- If time allows ----
 
 
-> ⏰ 55 minutes
+## Input
 
-## Lab 2: Mad libs (30min)
+```{important}
+TIMECHECK: 55 minutes
+```
 
-- stretch: ascii art and ANSI colors ?
-- stretch: ???
+## Comments
 
-
-> ⏰ 85 minutes
-
-
-## (If time allows) Comments
+```{important}
+Only if ahead of schedule
+```
 
 A _comment_ is a line that is ignored by the interpreter and can contain any text. A line is a comment if there is a hashtag, `#` (or "_octothorp_"), at the beginning of the line. Here’s an example:
 

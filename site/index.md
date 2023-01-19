@@ -4,10 +4,6 @@
 🧑‍🏫 This is the instructor version of the course site. Go to the [student site](http://julianfortune.com/beginning-python-23w).
 ```
 
-```{tip}
-Navigate using the side bar on the left
-```
-
 Programming in Python® for Beginners (6-8) taught by Julian Fortune.
 
 ## Description
@@ -22,24 +18,30 @@ Learn Python®—a powerful, widely used, and versatile programming language—i
 Kellogg Middle School\
 3330 SE 69th Avenue, Portland OR 97206
 
+```{tip}
+You can also navigate using the side bar on the left
+```
 
+## Contents
 <!-- Defines the side bar -->
 
+
 ```{toctree}
-:hidden:
 syllabus
 ```
 
 ```{toctree}
-:caption: Materials
+:caption: Course Content
 :maxdepth: 3
-:hidden:
 week-1/index
 ```
 
-<!-- ```{toctree}
-:caption: Useful Links
-:hidden:
-Future Coder (interactive tutorials) <https://futurecoder.io>
-Learning Python 3 (textbook) <http://openbookproject.net/thinkcs/python/english3e/>
-``` -->
+```{toctree}
+:caption: Additional Resources
+installing-python
+Learning Python 3 <http://openbookproject.net/thinkcs/python/english3e/>
+Future Coder <https://futurecoder.io>
+```
+
+<!--  -->
+<!--  -->

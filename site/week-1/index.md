@@ -11,6 +11,5 @@
 ```{toctree}
 :maxdepth: 1
 lecture-notes
-lab-1
-lab-2
+lab
 ```
