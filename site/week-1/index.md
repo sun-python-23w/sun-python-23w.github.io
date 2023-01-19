@@ -2,10 +2,16 @@
 
 ## Goals
 - Get to know eachother and learn everyone's name
-- Become comfortable:
-    - using the Python interpreter and
-    - executing scripts (in files)
+- Learn how to:
+    1. Use VSCode
+    1. Program in the interactive console
+    1. Define, combine, and interpolate strings
+    1. Run programs (stored in files)
+    1. `print()` values to the console
+    1. Store values in and modify variables
 - Create a small project
+
+##
 
 ## Materials
 ```{toctree}
