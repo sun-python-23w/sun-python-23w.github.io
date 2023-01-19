@@ -1,7 +1,7 @@
 # Beginning Python (Winter 2023)
 
 ```{important}
-🧑‍🏫 This is the instructor version of the course site. Go to the [student site](http://julianfortune.com/beginning-python-23w).
+🧑‍🏫 This is the instructor version of the course site. Go to the [student site](http://sun-python-23w.github.io).
 ```
 
 Programming in Python® for Beginners (6-8) taught by Julian Fortune.
