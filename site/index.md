@@ -7,41 +7,43 @@
 Programming in Python® for Beginners (6-8) taught by Julian Fortune.
 
 ## Description
-Learn Python®—a powerful, widely used, and versatile programming language—in this fun, hands-on class for new programmers. Design a trivia program and games like guess my number, word jumble, and hangman all while learning concepts that apply to all programming languages.
+Learn [Python](https://python.org)—a powerful, widely used, and versatile programming language—in this fun, hands-on class for new programmers. Design a trivia program and games like guess my number, word jumble, and hangman all while learning concepts that apply to all programming languages.
+
+No prior background knowledge is required!
 
 ## Meetings
 - Tuesdays from 4-5:30pm
-- Jan. 24 - March 7
+- January 24-March 7
 
-## Location
+## Contact
 
-Kellogg Middle School\
-3330 SE 69th Avenue, Portland OR 97206
+Submit suggestions/feedback/questions via [this form](https://forms.gle/RAvLDnSq6M1gasqs8).
+
+## Contents
+
+```{toctree}
+:maxdepth: 2
+week-1/index
+```
+
+<!--
+Drafts:
+week-2/index
+-->
+
+```{toctree}
+:caption: Resources
+Feedback <https://forms.gle/RAvLDnSq6M1gasqs8>
+```
+
+<!--
+Drafts:
+installing-python
+Learning Python 3 <http://openbookproject.net/thinkcs/python/english3e/
+Future Coder <https://futurecoder.io>
+-->
+
 
 ```{tip}
 You can also navigate using the side bar on the left
 ```
-
-## Contents
-<!-- Defines the side bar -->
-
-
-```{toctree}
-syllabus
-```
-
-```{toctree}
-:caption: Course Content
-:maxdepth: 3
-week-1/index
-```
-
-```{toctree}
-:caption: Additional Resources
-installing-python
-Learning Python 3 <http://openbookproject.net/thinkcs/python/english3e/>
-Future Coder <https://futurecoder.io>
-```
-
-<!--  -->
-<!--  -->

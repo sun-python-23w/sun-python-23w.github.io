@@ -3,9 +3,9 @@
 ```{important}
 ## Warm up
 
-<!-- TODO: Need to do some sort of 'community building' thing for ~10 minutes-->
-
-- Circle up and introduce names + some fun fact
+- Circle up and introduce
+    - Name
+    - ??? favorite piece of software? video game/application/website
 - Name point & swap game ?
 
 Timecheck: 10 minutes
@@ -13,18 +13,28 @@ Timecheck: 10 minutes
 ## Introduction
 
 - Introduce myself
-    - School
     - Current job
+    - Background with python
     - General background
+        - learned python high school
+        - used python for ~1/2 college classes
+        - used python most of my jobs
+        - use python for side stuff
+        - currently working on python code-gen
 - Course overview
-    - This is my first time teaching this
-    - Feedback form on the website
-    - Structure of lecture / labs
+    - Goals
+        - Have fun
+        - Make some cool projects
+        - Learn general programming concepts
+        - Gain an understanding of the Python language
+    - Specifics
+        - Structure of lecture / labs
+        - This is my first time teaching this
+        - Feedback form on the website
     - What to do if stuck / confused
         - Check the lecture notes
         - Ask someone next to you
         - Raise hand / get my attention
-    - ???
 
 Timecheck: 15 minutes
 ```
@@ -32,7 +42,7 @@ Timecheck: 15 minutes
 (vscode)=
 ## VSCode
 
-VSCode is a popular choice of _integrated development environment_ (IDE) for developing Python.
+VSCode is a popular choice of application for developing Python that lets us browse files, edit text, see problems with code in real time, and execute programs.
 
 ![VSCode Interface](./images/vscode-interface.png)
 
@@ -88,7 +98,13 @@ When you are finished using the interpreter, type `exit()` and press the return 
 
 ## Strings
 
-### Writing
+"String" is another word for "text" (because text is just a _string_ of characters all strung together).
+
+Sentences and words and letters are all strings, but numbers can be strings too! Strings can contain any displayable character you can type with a keyboard:
+
+```python
+"This is a string! @ /// 87 --- <^> :)"
+```
 
 ### Combining strings
 
@@ -110,7 +126,7 @@ We can add some spaces to make it look a little nicer:
 'January 16th, 2023'
 ```
 
-### Can we add strings and numbers?
+#### What about using `+` with numbers?
 
 What happens if we try to build a date using a number?
 
@@ -121,11 +137,7 @@ Traceback (most recent call last):
 TypeError: can only concatenate str (not "int") to str
 ```
 
-We get an error! The first two lines tell us _where_ the error occurred (not very meaningful to us becuase we know it was the line we just entered), and the last line explains what the error was, a _TypeError_, with a message to elaborate, "can only concatenate str (not 'int') to str".
-
-This is telling us that the plus operator, `+`, is not defined when the thing (_operand_) on the left is a string, and the thing on the right is a number. So we cannot use the `+` for strings and numbers.
-
-Generally, when a situation arises during the execution of our code where the behavior is not defined, the best choice is to simple stop and throw an error.
+We get an error! The message "can only concatenate str (not 'int') to str" is telling us that the plus operator, `+`, is not defined when providing a string and a number (although we can combine 2 strings or 2 numbers with `+`).
 
 However, there is a simple way to combine numbers and strings...
 
@@ -140,40 +152,9 @@ _String interpolation_ allows us to insert things (literals, variables, or expre
 'Yoda is 25.9842 inches tall and 900 years old!'
 ```
 
+### Newlines
 
-## Scripts — Writing and Running Files
-
-The interactive interpreter is a convenient way to experiment and iterate on ideas quickly, but is challenging to reuse.
-
-Alternatively, we can write a series of lines in a file and then evaluate that file all at once.
-
-- Instructions for the command line
-
-    From the command line, run `python <file name>`, where `<file name>` is the path to the file you authored.
-
-
-## Printing
-
-Unlike the interactive interpreter, running a script does not automatically display a value. In order to display values we can use the `print` function. This script:
-
-```python
-print("Hi!")
-```
-
-Will produce the following output when run:
-
-```
-Hi!
-```
-
-```{tip}
-`print` is a function, which we *invoke* (tell it to run) using parenthesis.
-```
-
-```{important}
-TIMECHECK: 30 minutes
-```
-
+...
 
 ## Variables
 
@@ -182,14 +163,19 @@ TODO: What are variables and why do we need them?
 ### Naming Rules
 
 1. Variable names can contain any of these characters:
-    - Lowercase letters (`a`, `b`, … , `z`)
-    - Uppercase letters (`A`, `B`, … , `Z`)
+    - Lowercase letters (`a`, `b`, ... , `z`)
+    - Uppercase letters (`A`, `B`, ... , `Z`)
     - An underscore (`_`)
-    - Numbers (`0`, `1`, … `9`)
+    - Numbers (`0`, `1`, ... `9`)
 2. Variable names *may not begin with a number*.
+
+```{important}
+Skip in lecture
+```
+
 3. Python reserves some special names for itself that you are not allowed to use as names for your variables:
 
-    ```
+    ```text
     False      await      else       import     pass
     None       break      except     in         raise
     True       class      finally    is         return
@@ -218,50 +204,45 @@ class = "fun"    # The name `class` is reserved by Python
 my-variable = 1  # The hyphen will be interpreted as a minus sign
 ```
 
-### Naming Conventions
+### Naming Advice
 
-- Generally we write variable names all lower case letters
-- If a variable name contains multiple words we connect them with underscores—we can't use spaces or python would think each word was a variable name:
+- Write variable names all lower case letters.
+- If a variable name contains multiple words, connect them with underscores—we can't use spaces or python would think each word was a variable name:
     ```python
     days_in_a_year = 365
     ```
 
 
-<!-- May or may not get to this ? -->
+## Scripts — Writing and Running Files
 
-## ---- If time allows ----
+The interactive interpreter is a convenient way to experiment and iterate on ideas quickly, but is challenging to reuse.
+
+Alternatively, we can write a series of lines in a file and then evaluate that file all at once.
+
+- Instructions for the command line
+
+    From the command line, run `python <file name>`, where `<file name>` is the path to the file you authored.
 
 
-## Input
 
-```{important}
-TIMECHECK: 55 minutes
-```
+## Printing
 
-## Comments
-
-```{important}
-Only if ahead of schedule
-```
-
-A _comment_ is a line that is ignored by the interpreter and can contain any text. A line is a comment if there is a hashtag, `#` (or "_octothorp_"), at the beginning of the line. Here’s an example:
+Unlike the interactive interpreter, running a script does not automatically display a value. In order to display values we can use the `print` function. This script:
 
 ```python
-# This is a comment!
+print("Hi!")
 ```
 
-We generally use comments for:
+Will produce the following output when run:
 
-- Providing context
-- Explaining why a decision was made
-- Documenting the inputs and outputs to a function or program
-
-By convention, we put comments *before* the line that they reference. Here’s an example:
-
-```python
-# This computes an approximation for pi
-# See: https://en.wikipedia.org/wiki/Leibniz_formula_for_π
-(1 - 1/3 + 1/5 - 1/7) * 4
+```
+Hi!
 ```
 
-*Note: It is always a good idea to cite sources and provide links when borrowing formulas or code from elsewhere.*
+```{tip}
+`print` is a function, which we *invoke* (tell it to run) using parenthesis.
+```
+
+```{important}
+TIMECHECK: 30 minutes
+```

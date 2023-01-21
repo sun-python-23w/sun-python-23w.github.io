@@ -6,5 +6,6 @@
     - Probably should make bonus stuff unrelated to progress in the class
         - E.g., progress them on skills (or skill trees) that are not part of the spine of what the class will do
         - Example: ANSI colors
-        
+        - Example: ASCII text art
+
 - Just do the string interpolation in the main lecture and then only have one lab instead of trying to bring the group back together ...?
