@@ -5,7 +5,7 @@
 
 - Circle up and introduce
     - Name
-    - ??? favorite piece of software? video game/application/website
+    - Favorite game—video game, board game, sport, etc.
 - Name point & swap game ?
 
 Timecheck: 10 minutes
@@ -27,9 +27,15 @@ Timecheck: 10 minutes
         - Make some cool projects
         - Learn general programming concepts
         - Gain an understanding of the Python language
-    - Specifics
-        - Structure of lecture / labs
+    - Structure:
+        - warm up (~10min)
+        - lecture (~30min)
+        - lab (rest of time ~45min)
+        - wrap up (~5min)
+    - Disclaimer
         - This is my first time teaching this
+        - We may not get to all the material I prepared for today and _that's ok_
+        - I'm learning from this as much as all of you / y'all are
         - Feedback form on the website
     - What to do if stuck / confused
         - Check the lecture notes
@@ -66,7 +72,6 @@ Other elements of the interface:
 - The arrows in the top bar (<- ->) navigate back / forward through editors
 - The gear (⚙️) in the bottom left corner opens settings
 
-
 ## The Interactive Interpreter (Console)
 
 Python has an interactive interpreter that allows you to type code and immediately see the result of evaluating that line.
@@ -96,19 +101,83 @@ When you are finished using the interpreter, type `exit()` and press the return 
 >>> exit()
 ```
 
-## Strings
+(syntax)=
+## Syntax
 
-"String" is another word for "text" (because text is just a _string_ of characters all strung together).
+_Syntax_ is the term we use to describe the specific characters, symbols, spacing, or combinations of characters/symbols/spaces that we need to use for a programming language to understand what we are saying. Programming languages are much less skilled at understanding written text than humans, so we need to be very precise for them to understand.
 
-Sentences and words and letters are all strings, but numbers can be strings too! Strings can contain any displayable character you can type with a keyboard:
+### Examples in English
 
+We can apply the concept of syntax to english writing to ground the idea of syntax in some concepts you may already be familiar with:
+
+- Sentences must start with a capital letter, and must end with `.`, `?`, or `!`.
+
+    ```
+    This is a sentence.
+    This sentence coveys excitement!
+    Does this sentence ask a question?
+    ```
+
+    - This rules help us easily understand where sentences begin and end, and allows us to skip ahead or backwards by looking for punctuation and capitalization.
+
+- Peoples name's are capitalized.
+
+    ```
+    Bobby
+    Will
+    Sofia
+    ```
+
+    - This rule helps us know if a word like 'White' is someone's last name, or a color, for instance; the phrases "the Rich family" versus "the rich family" have a different meaning.
+
+### Examples in Python
+
+For example, the python syntax for adding two numbers is to write each number with a plus symbol (`+`) in between, with any amount of spaces optionally included between the plus symbol and the numbers.
+
+These are all valid syntaxes (and have the same meaning):
 ```python
-"This is a string! @ /// 87 --- <^> :)"
+>>> 1+1
+2
+>>> 1 + 1
+2
+>>> 1 +1
+2
 ```
 
+However, these do not follow the syntax and are invalid:
+```python
+>>> 1 1 +
+  File "<stdin>", line 1
+    1 1 +
+      ^
+SyntaxError: invalid syntax
+```
+
+```python
+>>> + 1 1
+  File "<stdin>", line 1
+    + 1 1
+        ^
+SyntaxError: invalid syntax
+```
+
+## Strings
+
+"String" is another word for "text" (because text is just a _string_ of characters all _strung_ together in a row).
+
+Sentences and words and letters are all strings, but numbers can be strings too! Strings can contain any displayable character you can type with a keyboard. These are all strings:
+```python
+"This is a string!"
+"@#///$!"
+"87"
+"---"
+":)"
+```
+
+(combining-strings)=
 ### Combining strings
 
-We can combine multiple strings into one using the addition operator (aka "the plus sign"), `+`:
+We can combine multiple strings into one using the plus symbol, `+`:
 ```python
 >>> "abc" + "def"
 'abcdef'
@@ -126,12 +195,13 @@ We can add some spaces to make it look a little nicer:
 'January 16th, 2023'
 ```
 
+(failed-concatenation)=
 #### What about using `+` with numbers?
 
 What happens if we try to build a date using a number?
 
 ```python
->>> "January" + 16 + "th"
+>>> "January" + " " + 16 + "th"
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 TypeError: can only concatenate str (not "int") to str
@@ -141,9 +211,9 @@ We get an error! The message "can only concatenate str (not 'int') to str" is te
 
 However, there is a simple way to combine numbers and strings...
 
-### Interpolation with `f`-strings
+### Formatted string literals
 
-_String interpolation_ allows us to insert things (literals, variables, or expressions) into our strings:
+A _formatted string literal_ (or "format string" for short) allows us to insert things (literals, variables, or expressions) into our strings:
 
 ```python
 >>> name = "Yoda"
@@ -152,15 +222,78 @@ _String interpolation_ allows us to insert things (literals, variables, or expre
 'Yoda is 25.9842 inches tall and 900 years old!'
 ```
 
-### Newlines
+```{tip}
+See {ref}`syntax` for a refresher on what "syntax" means.
+```
 
-...
+The syntax for formatted string literals is as follows:
+- Put an `f` right before the first quote (no spaces)
+- Surround any variables, literals, or expressions with curly braces, `{` and `}`
+
+Now we can construct our date from above ({ref}`failed-concatenation`):
+```python
+>>> f"January {16}th"
+'January 16th'
+```
+
+```{caution}
+Do not put any literal strings inside format string or Python will get confused!
+
+    >>> f"Hello, {"world"}"
+      File "<stdin>", line 1
+        f"Hello, {"world"}"
+                ^^^^^
+    SyntaxError: f-string: expecting '}'
+
+```
 
 ## Variables
 
-TODO: What are variables and why do we need them?
+While literals are often necessary in a program, they are not very dynamic. Variables allow us to:
+- Store a value,
+- Access the value later, and even
+- Change the value as many times as we want!
 
-### Naming Rules
+### Example
+
+```python
+>>> points = 0
+
+>>> f"I have {points} points!"
+'I have 0 points!'
+
+>>> points = 100000
+
+>>> f"I have {points} points!"
+'I have 100000 points!'
+```
+(I added the extra newlines to try to make each separate step more clear.)
+
+### Syntax
+
+To store a value in a variable we write the name of the variable, the equals sign, and then the value:
+```python
+>>> x = 32
+```
+
+The spaces around the `=` are optional, but highly encouraged!
+
+To access the value stored in a variable, we just write the name of the variable:
+```python
+>>> x * 2
+64
+
+>>> y = x / 2
+>>> y
+16
+```
+
+You can assign a new value to a variable as many times as you want!
+```python
+>>> x = 3200
+```
+
+### Naming
 
 1. Variable names can contain any of these characters:
     - Lowercase letters (`a`, `b`, ... , `z`)
@@ -170,7 +303,13 @@ TODO: What are variables and why do we need them?
 2. Variable names *may not begin with a number*.
 
 ```{important}
-Skip in lecture
+- What about using a `-` symbol (e.g., `my-variable`)?
+    - ASK: Why doesn't this work
+    - This is the syntax for subtracting two variables called `my` and `variable`
+```
+
+```{important}
+Skip in lecture ...
 ```
 
 3. Python reserves some special names for itself that you are not allowed to use as names for your variables:
@@ -190,21 +329,25 @@ Skip in lecture
 
 Here are some examples of valid names:
 
-```python
-x = 1
-count = 2
-power_level = 9001
+```yaml
+x
+count
+power_level
 ```
 
 Here are some names that will cause errors
 
 ```yaml
-1person = "tim"  # Variable names cannot start with a number
-class = "fun"    # The name `class` is reserved by Python
-my-variable = 1  # The hyphen will be interpreted as a minus sign
+1person      # Variable names cannot start with a number
+class        # The name `class` is reserved by Python
+my-variable  # The hyphen will be interpreted as a minus sign
 ```
 
-### Naming Advice
+```{important}
+... skip in lecture.
+```
+
+#### Best practices
 
 - Write variable names all lower case letters.
 - If a variable name contains multiple words, connect them with underscores—we can't use spaces or python would think each word was a variable name:
@@ -212,19 +355,35 @@ my-variable = 1  # The hyphen will be interpreted as a minus sign
     days_in_a_year = 365
     ```
 
-
-## Scripts — Writing and Running Files
+## Working with Files
 
 The interactive interpreter is a convenient way to experiment and iterate on ideas quickly, but is challenging to reuse.
 
 Alternatively, we can write a series of lines in a file and then evaluate that file all at once.
 
-- Instructions for the command line
+Here's an example, in a file:
+```python
+current_year = 2023
+message = f"The year is {current_year}"
+```
 
-    From the command line, run `python <file name>`, where `<file name>` is the path to the file you authored.
+### Creating a new file in VSCode
+
+```{danger}
+TODO
+```
+
+### Running a program
+
+In the terminal, run `python <file name>`, where `<file name>` is the name of the file you authored (for example, `year.py`):
+```
+% python year.py
+```
+
+Unfortunately our program doesn't have any output, but in the next section we'll see how we can output to the screen!
 
 
-
+(printing)=
 ## Printing
 
 Unlike the interactive interpreter, running a script does not automatically display a value. In order to display values we can use the `print` function. This script:
@@ -243,6 +402,36 @@ Hi!
 `print` is a function, which we *invoke* (tell it to run) using parenthesis.
 ```
 
+It can be very powerful to combine format string literals with print:
+```python
+print(f"My name is {the_real_slim_shady}")
+```
+
 ```{important}
 TIMECHECK: 30 minutes
+```
+
+## Newlines in Strings
+
+If we try typing a newline inside of a string literal by pressing the return key python will try to evaluate that line by itself, and report at error because there is a `"` missing on the right side of the string:
+
+```python
+>>> "This is my first line.
+  File "<stdin>", line 1
+    "This is my first line.
+    ^
+SyntaxError: unterminated string literal (detected at line 1)
+```
+
+Instead we use the special character `\n` to tell python to put a newline there:
+
+```python
+print("This is my first line.\nThis is my second line")
+```
+
+This produces the output:
+
+```shell
+This is my first line.
+This is my second line
 ```

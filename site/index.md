@@ -22,7 +22,7 @@ Submit suggestions/feedback/questions via [this form](https://forms.gle/RAvLDnSq
 ## Contents
 
 ```{toctree}
-:maxdepth: 2
+:maxdepth: 1
 week-1/index
 ```
 
@@ -31,8 +31,10 @@ Drafts:
 week-2/index
 -->
 
+
 ```{toctree}
 :caption: Resources
+:hidden:
 Feedback <https://forms.gle/RAvLDnSq6M1gasqs8>
 ```
 
@@ -43,6 +45,7 @@ Learning Python 3 <http://openbookproject.net/thinkcs/python/english3e/
 Future Coder <https://futurecoder.io>
 -->
 
+</br>
 
 ```{tip}
 You can also navigate using the side bar on the left

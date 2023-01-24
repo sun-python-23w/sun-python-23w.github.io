@@ -1,5 +1,6 @@
 # Week 1
 
+#### Goals
 
 - Get to know eachother and learn everyone's name
 - Learn how to:
@@ -11,7 +12,7 @@
     1. Store values in and modify variables
 - Create a small project
 
-
+---
 
 ```{toctree}
 :maxdepth: 1
