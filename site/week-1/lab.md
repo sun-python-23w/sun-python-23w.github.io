@@ -1,6 +1,6 @@
 .. sectnum::
 
-# Lab 1 — Hello, world
+# Lab 1 — Mad Libs
 
 ```{important}
 Write on the board:
