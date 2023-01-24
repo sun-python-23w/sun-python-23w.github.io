@@ -76,7 +76,7 @@ See {ref}`vscode` for a refresher on the interface and buttons.
 
 1. Display the value of `greeting` again.
 
-    Notice that the value _has not changed_. Take a moment to think about why this is the case.
+    Notice that the value of `greeting` _has not changed_. Take a moment to think about why this is the case.
 
 1. Finally, define `greeting` again exactly as you did before (although the value of `word` has changed) by using the up arrow to step through your command history
 
@@ -111,42 +111,61 @@ Now that we're comfortable working in the interactive intepreter lets take a loo
     The first known 'Hello world' program was written in [1974](https://en.m.wikipedia.org/wiki/%22Hello,_World!%22_program).
     ```
 
-### Bio
-
-1. Create a new file `bio.py` (in the `week-1` folder).
-
-```{danger}
-TODO: How to create a new file
-```
-
-1. Define a variable, called `name` that stores your name.
-1. Check that the value stored is correct by printing your name (using `print()` this time).
-1. Define a variable, `height_in_inches` that stores your height in inches. If you know your height in feet and inches, multiply the number of feet by `12` and then add the inches (example: `6*12 + 1`)
-1. Create a variable called `favorite_color`
-
-
-```{danger}
-TODO: Finish this
-```
-
 ### Mad libs
 
-```{danger}
-TODO: Finish this
-```
+1. Select a Mad-Libs page from the book.
 
-```python
-sentence = "The ______ brown fox ______ over the ______ dog."
-#                adj              verb            adj
-```
+1. Create a new file `madlib.py` (see {ref}`new-file` for a refresher).
 
-```python
-"The clever brown fox sailed over the smelly dog."
-```
+1. Implement the madlib in a program:
+    - Use variables to store the input words that will fill in the blanks
+        - You can use `"_"` as the value of the input variables while you are working.
+        - If there are multiple inputs with the same prompt you can put a number on the end (like `verb2`).
+    - Use formatted string literal for the story text.
+        - You can combine strings on multiple lines so long as they are inside the `print` parentheses.
+        - You only need to put the first 2 or 3 sentences in your program (but you're welcome to do the whole thing!).
 
-```{important}
-TIMECHECK: 85 minutes
-```
+    Here's an example:
+
+    ```python
+    adjective = "_"
+    first_name = "_"
+    adjective2 = "_"
+    noun = "_"
+
+    print(
+        f"They say my school is haunted! " +
+        f"My {adjective} friend {first_name} says she saw " +
+        f"a {adjective2} {noun} floating at the end of the " +
+        f"hall near the cafeteria."
+    )
+    ```
+
+1. Pair up with someone else in the class and for each of you:
+    - Prompt your partner for the input words and write them as string literal in your program
+    - Run the program to generate an output!
+
+    ```python
+    adjective = "disappointing"
+    first_name = "Charles"
+    adjective2 = "sparkling"
+    noun = "goose"
+
+    print(
+        "They say my school is haunted! " +
+        f"My {adjective} friend {first_name} says she saw " +
+        f"a {adjective2} {noun} floating at the end of the " +
+        "hall near the cafeteria."
+    )
+    ```
+
+    Here's the output from running `python madlib.py`:
+
+    ```
+    They say my school is haunted! My disappointing friend Charles
+    says she saw a sparkling goose floating at the end of the hall
+    near the cafeteria.
+    ```
 
 ### Feedback
 
@@ -160,7 +179,7 @@ Check in with me before moving on to the challenges section.
 
 ## Challenges
 
-```{note}
+<!-- ```{note}
 These can be done in any order; if you get stuck try a different one!
 ```
 
@@ -182,7 +201,7 @@ dMP dMP dMMMMMP dMMMMMP dMMMMMP VMMMP"        VMMMPVMMP"  VMMMP" dMP dMP dMMMMMP
 
 ```
 
-Hint: It may be helpful to split the string into multiple lines:
+Hint: It may be helpful to split the string into multiple lines using parentheses, and to use newlines (see {ref}`newlines`):
 
 ```python
 long_string = ("first line\n" +
@@ -191,13 +210,9 @@ long_string = ("first line\n" +
 
 ```{tip}
 In order to differentiate `\n` from a real usecase, like `C:\\users\nancy`, Python allows you to write the special character `\\` and will print this as a single `\`. If your text art has multiple backslashes in a row you will need to replace each single backslash with a pair or else Python will think you are trying to write the special character `\\`.
-```
+``` -->
 
 ### Colors
-
-```{warning}
-This is a tough one!
-```
 
 Read the blog post [Build your own Command Line with ANSI escape codes](https://www.lihaoyi.com/post/BuildyourownCommandLinewithANSIescapecodes.html) and put colors into your madlibs program so that the final output displays each type of word inserted in a different color (for example, green corresponds to verb, yellow to noun, etc.).
 

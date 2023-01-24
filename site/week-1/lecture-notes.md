@@ -6,32 +6,17 @@
 - Circle up and introduce
     - Name
     - Favorite game—video game, board game, sport, etc.
-- Name point & swap game ?
 
-Timecheck: 10 minutes
+TIMECHECK: 7 minutes
 
 ## Introduction
 
-- Introduce myself
-    - Current job
-    - Background with python
-    - General background
-        - learned python high school
-        - used python for ~1/2 college classes
-        - used python most of my jobs
-        - use python for side stuff
-        - currently working on python code-gen
 - Course overview
     - Goals
         - Have fun
         - Make some cool projects
         - Learn general programming concepts
         - Gain an understanding of the Python language
-    - Structure:
-        - warm up (~10min)
-        - lecture (~30min)
-        - lab (rest of time ~45min)
-        - wrap up (~5min)
     - Disclaimer
         - This is my first time teaching this
         - We may not get to all the material I prepared for today and _that's ok_
@@ -40,7 +25,11 @@ Timecheck: 10 minutes
     - What to do if stuck / confused
         - Check the lecture notes
         - Ask someone next to you
-        - Raise hand / get my attention
+        - Raise hand / get my attentio
+
+Timecheck: 10 minutes
+
+## Fill out a madlib as a group
 
 Timecheck: 15 minutes
 ```
@@ -211,6 +200,7 @@ We get an error! The message "can only concatenate str (not 'int') to str" is te
 
 However, there is a simple way to combine numbers and strings...
 
+(f-strings)=
 ### Formatted string literals
 
 A _formatted string literal_ (or "format string" for short) allows us to insert things (literals, variables, or expressions) into our strings:
@@ -324,6 +314,10 @@ Skip in lecture ...
     async      elif       if         or         yield
     ```
 
+```{important}
+... skip in lecture.
+```
+
 
 #### Examples
 
@@ -341,10 +335,6 @@ Here are some names that will cause errors
 1person      # Variable names cannot start with a number
 class        # The name `class` is reserved by Python
 my-variable  # The hyphen will be interpreted as a minus sign
-```
-
-```{important}
-... skip in lecture.
 ```
 
 #### Best practices
@@ -367,11 +357,15 @@ current_year = 2023
 message = f"The year is {current_year}"
 ```
 
+(new-file)=
 ### Creating a new file in VSCode
 
-```{danger}
-TODO
-```
+To create a new file in VSCode:
+1. Right click in the file explorer area (left hand side) underneath the existing files (currently `hello-world.py`).
+    ![](images/vscode-new-file.png)
+1. Select `New file...`
+1. Type in a name (ending in `.py`)
+1. Press enter
 
 ### Running a program
 
@@ -407,10 +401,7 @@ It can be very powerful to combine format string literals with print:
 print(f"My name is {the_real_slim_shady}")
 ```
 
-```{important}
-TIMECHECK: 30 minutes
-```
-
+<!-- (newlines)=
 ## Newlines in Strings
 
 If we try typing a newline inside of a string literal by pressing the return key python will try to evaluate that line by itself, and report at error because there is a `"` missing on the right side of the string:
@@ -434,4 +425,4 @@ This produces the output:
 ```shell
 This is my first line.
 This is my second line
-```
+``` -->
