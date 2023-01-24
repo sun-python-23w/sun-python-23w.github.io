@@ -14,7 +14,7 @@ Write on the board:
 
 ## Set up
 
-1. Launch the application (should be in the dock)
+1. Launch the application **Visual Studio Code** (should be in the dock)
 1. Open the folder `week-1` in the `python` folder on the desktop.
 
     1. You can open the folder from VSCode by clicking *Open Folder* from the explorer, and then selecting `python` and `week-1`.
