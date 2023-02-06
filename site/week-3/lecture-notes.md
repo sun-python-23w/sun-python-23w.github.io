@@ -1,6 +1,5 @@
 # Lecture Notes
 
-
 ```{important}
 # Beginning activity
 

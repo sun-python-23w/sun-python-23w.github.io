@@ -24,17 +24,23 @@ Submit suggestions/feedback/questions via [this form](https://forms.gle/RAvLDnSq
 ```{toctree}
 :maxdepth: 1
 week-1/index
+week-2/index
+week-3/index
 ```
 
 <!--
 Drafts:
-week-2/index
+
 -->
+
+```{toctree}
+:caption: Projects
+projects/example
+```
 
 
 ```{toctree}
 :caption: Resources
-:hidden:
 Feedback <https://forms.gle/RAvLDnSq6M1gasqs8>
 ```
 
