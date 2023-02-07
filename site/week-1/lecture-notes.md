@@ -1,7 +1,7 @@
 # Lecture 1 — Introduction to Python
 
 ```{important}
-## Warm up
+**Warm up**
 
 - Circle up and introduce
     - Name
@@ -9,7 +9,7 @@
 
 TIMECHECK: 7 minutes
 
-## Introduction
+**Introduction**
 
 - Course overview
     - Goals
@@ -29,7 +29,7 @@ TIMECHECK: 7 minutes
 
 Timecheck: 10 minutes
 
-## Fill out a madlib as a group
+**Fill out a madlib as a group**
 
 Timecheck: 15 minutes
 ```

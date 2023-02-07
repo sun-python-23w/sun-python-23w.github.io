@@ -1,7 +1,7 @@
 # Lecture Notes
 
 ```{important}
-# Beginning activity
+**Beginning activity**
 
 - Circle and introduce names + some fun fact
 - 'foo/bar/baz' like zip/zap/zop ...?
@@ -11,34 +11,102 @@
 Still a work in progress!
 ```
 
-## Comments
+## `for`-loops
 
-A _comment_ is a line that is ignored by the interpreter and can contain any text. A line is a comment if there is a hashtag, `#` (or "_octothorp_"), at the beginning of the line. Here’s an example:
+- Syntax is `for <var_name> in <collection>:` and then the 'body' of the for loop is all indented.
+- Example:
+    ```python
+    for letter in "hello":
+        print(letter)
+    ```
+
+    Produces the output:
+
+    ```
+    h
+    e
+    l
+    l
+    o
+    ```
+
+
+### Ranges
+
+Allow executing a block a certain number of times based on an integer number:
 
 ```python
-# This is a comment!
+for iteration in range(3):
+    print("hello")
 ```
 
-We generally use comments for:
+```
+hello
+hello
+hello
+```
 
-- Providing context
-- Explaining why a decision was made
-- Documenting the inputs and outputs to a function or program
-
-By convention, we put comments *before* the line that they reference. Here’s an example:
+The variable starts at `0`, and goes up until one less than the number we specify:
 
 ```python
-# This computes an approximation for pi
-# See: https://en.wikipedia.org/wiki/Leibniz_formula_for_π
-(1 - 1/3 + 1/5 - 1/7) * 4
+for iteration in range(3):
+    print(iteration)
 ```
 
-*Note: It is always a good idea to cite sources and provide links when borrowing formulas or code from elsewhere.*
+```
+0
+1
+2
+```
 
 
-## Input
 
-`input()` provides a way for our program to request input from the user.
+## `Boolean` expressions
 
-- The _parameter_ (an input) for the prompt to show to the user
-- The
+Boolean expression is any expression that can determined to be 'true' or 'false'. You can think of boolean expressions as asking a yes or no question (where we say `True` or `False` instead of "yes" or "no").
+
+### `==`
+
+We use 2 equals signs to be different from the 'assignment operator' that we use to store a value in a variable.
+
+Allows comparing to see if two values are the same:
+
+```python
+>>> "hello" == "hello"
+True
+>>> "a" == "abc"
+False
+>>> "Yes" == "yes"
+False
+```
+
+### Numerical comparisons
+
+We can use the less than (`<`) and greater than (`>`) signs to compare numbers.
+
+```python
+>>> 3 > 1
+True
+>>> 100 < 1
+False
+```
+
+## Conditional blocks (`if`)
+
+We can decide whether or not to evaluate some code based on a boolean expression.
+
+```python
+if user_name == "admin":
+    print("As you wish!")
+```
+
+### `else`
+
+We can provide an alternative piece of code to run when the condition is `False` using `else`:
+
+```python
+if guess == target:
+    print("You win!")
+else:
+    print("Try again")
+```

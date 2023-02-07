@@ -1,6 +1,6 @@
 # Week 1
 
-#### Goals
+## Goals
 
 - Get to know eachother and learn everyone's name
 - Learn how to:

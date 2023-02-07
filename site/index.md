@@ -35,7 +35,9 @@ Drafts:
 
 ```{toctree}
 :caption: Projects
-projects/example
+projects/madlibs
+projects/adventure
+projects/jumble
 ```
 
 
