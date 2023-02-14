@@ -21,7 +21,7 @@ Still a work in progress
     - `else`
 
 **Lab**
-- Continue with futurecoder exercises
+- Continue with [futurecoder](https://futurecoder.io) exercises on `for` loops and `if` statements
     - In **If Statements** Skip "Understanding Programs With snoop"
 - Last 30 minutes -> mad libs project
 
