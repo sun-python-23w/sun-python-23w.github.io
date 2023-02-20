@@ -27,6 +27,7 @@ week-1/index
 week-2/index
 week-3/index
 week-4
+week-5
 ```
 
 <!--
