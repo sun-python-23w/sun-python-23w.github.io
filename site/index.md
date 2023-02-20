@@ -44,15 +44,10 @@ projects/jumble
 
 ```{toctree}
 :caption: Resources
+Future Coder <https://futurecoder.io>
+Textbook <http://openbookproject.net/thinkcs/python/english3e/
 Feedback <https://forms.gle/RAvLDnSq6M1gasqs8>
 ```
-
-<!--
-Drafts:
-installing-python
-Learning Python 3 <http://openbookproject.net/thinkcs/python/english3e/
-Future Coder <https://futurecoder.io>
--->
 
 </br>
 
