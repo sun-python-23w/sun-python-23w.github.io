@@ -46,7 +46,7 @@ projects/jumble
 ```{toctree}
 :caption: Resources
 Future Coder <https://futurecoder.io>
-Textbook <http://openbookproject.net/thinkcs/python/english3e/
+Textbook <http://openbookproject.net/thinkcs/python/english3e/>
 Feedback <https://forms.gle/RAvLDnSq6M1gasqs8>
 ```
 
