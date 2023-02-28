@@ -26,6 +26,10 @@ This is a very simple adventure game that only implements moving around this gam
     forest  ←→  river
 ```
 
+```{tip}
+💡 Write the code for this yourself without copying and pasting!
+```
+
 1. Create a variable `finished` set to `False`
     ```python
     finished = False
