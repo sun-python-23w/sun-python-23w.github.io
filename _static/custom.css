@@ -1,0 +1,31 @@
+/* From Smithy.io */
+h2,
+h3 {
+    margin-top: 1.7rem;
+}
+
+h4,
+h5,
+h6,
+h7,
+h8 {
+    margin-top: 2rem;
+}
+
+
+/* Make notes for myself more prominent than standard 'important' admonition */
+/* .important {
+    font-size: 1.2rem;
+} */
+
+.important .rubric {
+    font-size: 1.2rem;
+}
+
+ol ol {
+    list-style: lower-alpha !important;
+}
+
+ol ol ol {
+    list-style: lower-roman !important;
+}

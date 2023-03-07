@@ -1,0 +1,560 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Jumble" href="jumble.html" /><link rel="prev" title="Mad libs" href="madlibs.html" />
+
+    <meta name="generator" content="sphinx-4.3.0, furo 2022.06.21"/>
+        <title>Adventure Game - Beginning Python</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/student.css" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  --color-brand-primary: #f45429;
+  --color-brand-content: #724bff;
+  --color-highlight-on-target: #FFD9CD;
+  --color-admonition-title--important: #FF52A9;
+  --color-admonition-title-background--important: #FF52A925;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #282828;
+  --color-code-foreground: #dddddd;
+  --color-brand-primary: #ffaa22;
+  --color-brand-content: #7aadd4;
+  --color-highlight-on-target: #ffaa2233;
+  --color-admonition-title--important: #FF52A9;
+  --color-admonition-title-background--important: #FF52A925;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #282828;
+  --color-code-foreground: #dddddd;
+  --color-brand-primary: #ffaa22;
+  --color-brand-content: #7aadd4;
+  --color-highlight-on-target: #ffaa2233;
+  --color-admonition-title--important: #FF52A9;
+  --color-admonition-title-background--important: #FF52A925;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">Beginning Python</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  
+  <span class="sidebar-brand-text">Beginning Python</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../week-1/index.html">Week 1</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../week-1/lecture-notes.html">Lecture 1 — Introduction to Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../week-1/lab.html">Lab 1 — Mad Libs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../week-2/index.html">Week 2</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../week-3/index.html">Week 3</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../week-3/lecture-notes.html">Lecture Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../week-4.html">Week 4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week-5.html">Week 5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week-6.html">Week 6</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week-7.html">Week 7</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Projects</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="hangman.html">Hangman</a></li>
+<li class="toctree-l1"><a class="reference internal" href="madlibs.html">Mad libs</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Adventure Game</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jumble.html">Jumble</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://futurecoder.io">Future Coder</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://openbookproject.net/thinkcs/python/english3e/">Textbook</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://forms.gle/RAvLDnSq6M1gasqs8">Feedback</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="adventure-game">
+<h1>Adventure Game<a class="headerlink" href="#adventure-game" title="Permalink to this headline">#</a></h1>
+<p>An adventure game is a simple exploration and puzzle-solving game.</p>
+<p>Here's an example: <a class="reference external" href="https://rickadams.org/adventure/advent/">Colossal Cave Adventure</a></p>
+<p><img alt="" src="../_images/adventure.png" /></p>
+<p>You can use the letters of cardinal directions (n, e, s, w) to move around, and simple commands, like &quot;get torch&quot; to put items in your inventory.</p>
+<section id="objectives">
+<h2>Objectives<a class="headerlink" href="#objectives" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Create a simple adventure game with:</p>
+<ul>
+<li><p>At least 3 locations</p></li>
+<li><p>An item that can be picked up and used in some way to 'win' the game</p></li>
+<li><p>Clear descriptions of locations with easy to understand directions</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="step-by-step-example">
+<h2>Step by Step Example<a class="headerlink" href="#step-by-step-example" title="Permalink to this headline">#</a></h2>
+<p>This is a very simple adventure game that only implements moving around this game world:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    meadow
+       ↑
+       ↓
+    forest  ←→  river
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>💡 Write the code for this yourself without copying and pasting!</p>
+</div>
+<ol class="arabic">
+<li><p>Create a variable <code class="docutils literal notranslate"><span class="pre">finished</span></code> set to <code class="docutils literal notranslate"><span class="pre">False</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">finished</span> <span class="o">=</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</li>
+<li><p>Create a <code class="docutils literal notranslate"><span class="pre">while</span></code>-loop that continues while <code class="docutils literal notranslate"><span class="pre">finished</span></code> is not true:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="ow">not</span> <span class="n">finished</span><span class="p">:</span>
+</pre></div>
+</div>
+</li>
+<li><p>Inside the while loop tell the the user about their surroundings:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="ow">not</span> <span class="n">finished</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You are in a forest&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>Prompt the player for their choice of what to do next:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="ow">not</span> <span class="n">finished</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You are in a forest&quot;</span><span class="p">)</span>
+
+    <span class="n">choice</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Which direction: north or east? Choice: &quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>Test out your program. It will probably be a bit repetitive... Press <code class="docutils literal notranslate"><span class="pre">control</span></code> and <code class="docutils literal notranslate"><span class="pre">c</span></code> at the same time to kill the program.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>You are in a forest
+Which direction: north or east? Choice: north
+You are in a forest
+Which direction: north or east? Choice: east
+You are in a forest
+</pre></div>
+</div>
+</li>
+<li><p>Create a new variable at the top level called <code class="docutils literal notranslate"><span class="pre">location</span></code> and set it to forest. This will allow us to change the player's location and give them different options for where to go next:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">finished</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">location</span> <span class="o">=</span> <span class="s2">&quot;forest&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Now check <code class="docutils literal notranslate"><span class="pre">location</span></code> inside the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="ow">not</span> <span class="n">finished</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">location</span> <span class="o">==</span> <span class="s2">&quot;forest&quot;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You are in a forest&quot;</span><span class="p">)</span>
+
+        <span class="n">choice</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Which direction: north or east? Choice: &quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>Add the other locations:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="ow">not</span> <span class="n">finished</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">location</span> <span class="o">==</span> <span class="s2">&quot;forest&quot;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You are in a forest&quot;</span><span class="p">)</span>
+
+        <span class="n">choice</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Which direction: north or east? Choice: &quot;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">location</span> <span class="o">==</span> <span class="s2">&quot;meadow&quot;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You are in a meadow&quot;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">location</span> <span class="o">==</span> <span class="s2">&quot;river&quot;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You are next to a river&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>Next, add an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement below the line that gets the user input (<code class="docutils literal notranslate"><span class="pre">choice</span> <span class="pre">=</span> <span class="pre">input(...</span></code>) that changes <code class="docutils literal notranslate"><span class="pre">location</span></code> based on <code class="docutils literal notranslate"><span class="pre">choice</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>        <span class="n">choice</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Which direction: north or east? Choice: &quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">choice</span> <span class="o">==</span> <span class="s2">&quot;north&quot;</span><span class="p">:</span>
+            <span class="n">location</span> <span class="o">=</span> <span class="s2">&quot;meadow&quot;</span>
+        <span class="k">elif</span> <span class="n">choice</span> <span class="o">==</span> <span class="s2">&quot;east&quot;</span><span class="p">:</span>
+            <span class="n">location</span> <span class="o">=</span> <span class="s2">&quot;river&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Add an <code class="docutils literal notranslate"><span class="pre">else</span></code> and print an error (this uses the special f-string syntax that lets us embed variables in strings):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>        <span class="n">choice</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Which direction: north or east? Choice: &quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">choice</span> <span class="o">==</span> <span class="s2">&quot;north&quot;</span><span class="p">:</span>
+            <span class="n">location</span> <span class="o">=</span> <span class="s2">&quot;meadow&quot;</span>
+        <span class="k">elif</span> <span class="n">choice</span> <span class="o">==</span> <span class="s2">&quot;east&quot;</span><span class="p">:</span>
+            <span class="n">location</span> <span class="o">=</span> <span class="s2">&quot;river&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;I don&#39;t understand &#39;</span><span class="si">{</span><span class="n">choice</span><span class="si">}</span><span class="s2">&#39;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>Add the input and if statements for meadow and river locations:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">elif</span> <span class="n">location</span> <span class="o">==</span> <span class="s2">&quot;meadow&quot;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You are in a meadow&quot;</span><span class="p">)</span>
+
+        <span class="n">choice</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Which direction: south? Choice: &quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">choice</span> <span class="o">==</span> <span class="s2">&quot;south&quot;</span><span class="p">:</span>
+            <span class="n">location</span> <span class="o">=</span> <span class="s2">&quot;forest&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;I don&#39;t understand &#39;</span><span class="si">{</span><span class="n">choice</span><span class="si">}</span><span class="s2">&#39;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">elif</span> <span class="n">location</span> <span class="o">==</span> <span class="s2">&quot;river&quot;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You are next to a river&quot;</span><span class="p">)</span>
+
+        <span class="n">choice</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Which direction: west? Choice: &quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">choice</span> <span class="o">==</span> <span class="s2">&quot;west&quot;</span><span class="p">:</span>
+            <span class="n">location</span> <span class="o">=</span> <span class="s2">&quot;forest&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;I don&#39;t understand &#39;</span><span class="si">{</span><span class="n">choice</span><span class="si">}</span><span class="s2">&#39;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>You should now be able to move around!</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>You are in a forest
+Which direction: north or east? Choice: north
+You are in a meadow
+Which direction: south? Choice: south
+You are in a forest
+Which direction: north or east? Choice: east
+You are next to a river
+Which direction: west? Choice: west
+You are in a forest
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="a-more-complicated-example">
+<h2>A More Complicated Example<a class="headerlink" href="#a-more-complicated-example" title="Permalink to this headline">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">describeRoom</span><span class="p">(</span><span class="n">roomName</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">room</span> <span class="o">==</span> <span class="s2">&quot;Bridge&quot;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span>
+            <span class="s2">&quot;You are standing in the bridge of a rigid airship (blimp).</span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="o">+</span> <span class="s2">&quot;The captain is franticly manipulating controls; sweat dripping down &quot;</span>
+            <span class="o">+</span> <span class="s2">&quot;her brow as she barely manages to keep the ship stable.</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="p">)</span>
+    <span class="k">elif</span> <span class="n">room</span> <span class="o">==</span> <span class="s2">&quot;StarboardEngineRoom&quot;</span><span class="p">:</span>
+        <span class="c1"># (1) Print a description for the engine room including the mechanic hard</span>
+        <span class="c1"># at work and the engine not working properly.</span>
+        <span class="o">...</span>
+
+    <span class="k">elif</span> <span class="n">room</span> <span class="o">==</span> <span class="s2">&quot;MechanicalRoom&quot;</span><span class="p">:</span>
+        <span class="c1"># (2) Print a description for the mechanical room that includes a box of</span>
+        <span class="c1"># fuel hoses on a rack with other spare parts.</span>
+        <span class="o">...</span>
+
+
+<span class="c1"># These track the state of the game</span>
+<span class="n">finished</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">room</span> <span class="o">=</span> <span class="s2">&quot;Bridge&quot;</span>
+
+<span class="c1"># Start off the game by describing the starting room</span>
+<span class="n">describeRoom</span><span class="p">(</span><span class="n">room</span><span class="p">)</span>
+
+<span class="c1"># Main game loop</span>
+<span class="k">while</span> <span class="ow">not</span> <span class="n">finished</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">room</span> <span class="o">==</span> <span class="s2">&quot;Bridge&quot;</span><span class="p">:</span>
+        <span class="n">choice</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span>
+            <span class="s2">&quot;You can [talk] to the captain, walk [starboard] into the engine room, &quot;</span>
+            <span class="s2">&quot;or walk [aft] into the mechanical room. </span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;Choice: &quot;</span>
+        <span class="p">)</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">========================================================</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">choice</span> <span class="o">==</span> <span class="s2">&quot;talk&quot;</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span>
+                <span class="s2">&quot;The captain snarls back at you: &#39;What? Why are you bothering me?? &quot;</span>
+                <span class="o">+</span> <span class="s2">&quot;Go help the mechanic fix the starboard engine before we crash! &quot;</span>
+                <span class="o">+</span> <span class="s2">&quot;I won&#39;t be able to keep us up much longer.&#39;</span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="p">)</span>
+
+        <span class="k">elif</span> <span class="n">choice</span> <span class="o">==</span> <span class="s2">&quot;starboard&quot;</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You walk starboard into the engine room.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+            <span class="c1"># By changing the value stored in the `room` variable we can &#39;move&#39;</span>
+            <span class="c1"># where the player is in our game world</span>
+            <span class="n">room</span> <span class="o">=</span> <span class="s2">&quot;StarboardEngineRoom&quot;</span>
+            <span class="n">describeRoom</span><span class="p">(</span><span class="n">room</span><span class="p">)</span>
+
+        <span class="k">elif</span> <span class="n">choice</span> <span class="o">==</span> <span class="s2">&quot;aft&quot;</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span>
+                <span class="s2">&quot;You head down the stairs toward the back of the ship and into the &quot;</span>
+                <span class="o">+</span> <span class="s2">&quot;mechanical room.</span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="p">)</span>
+            <span class="n">room</span> <span class="o">=</span> <span class="s2">&quot;MechanicalRoom&quot;</span>
+            <span class="n">describeRoom</span><span class="p">(</span><span class="n">room</span><span class="p">)</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;[!] I don&#39;t understand &#39;</span><span class="si">{</span><span class="n">choice</span><span class="si">}</span><span class="s2">&#39;. Please enter one of the words &quot;</span>
+                <span class="o">+</span> <span class="s2">&quot;surrounded in [square brackets].</span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="p">)</span>
+
+    <span class="k">elif</span> <span class="n">room</span> <span class="o">==</span> <span class="s2">&quot;StarboardEngineRoom&quot;</span><span class="p">:</span>
+        <span class="c1"># (3) Using the code inside the `if` block for `&quot;Bridge&quot;` above implement</span>
+        <span class="c1"># getting a choice from the user to let them go back to the bridge, or to talk</span>
+        <span class="c1"># to the mechanic who tells the player the primary fuel hose burst and he needs</span>
+        <span class="c1"># a replacement.</span>
+        <span class="o">...</span>
+
+    <span class="k">elif</span> <span class="n">room</span> <span class="o">==</span> <span class="s2">&quot;MechanicalRoom&quot;</span><span class="p">:</span>
+        <span class="c1"># (4) Using the code inside the `if` block for `&quot;Bridge&quot;` above implement</span>
+        <span class="c1"># getting a choice from the user to let them go back to the bridge.</span>
+        <span class="o">...</span>
+
+
+<span class="c1"># Make sure the program works by moving to the 3 different rooms</span>
+<span class="c1">#</span>
+<span class="c1"># Next steps:</span>
+<span class="c1"># (5) Create a new variable `hasFuelHose` on line 22 to indicate whether or not the player</span>
+<span class="c1">#     has picked up the replacement fuel hose from the mechanical room.</span>
+<span class="c1"># (6) Add a choice in the mechanical room that allows the player to pick up the fuel</span>
+<span class="c1">#     hose, and if the player selects that set `hasFuelHose` to True.</span>
+<span class="c1"># (7) If `hasFuelHose` is True (and only when `hasFuelHose` is True), show a new</span>
+<span class="c1">#     option in the mechanical room to give the mechanic the hose, then print a</span>
+<span class="c1">#     description of the mechanic fixing the engine, and set `finished` to True to</span>
+<span class="c1">#     end the game.</span>
+<span class="c1"># (8) Add more features! Maybe more rooms or parts the mechanic needs!</span>
+<span class="c1">#     Or, create a whole new game!</span>
+
+</pre></div>
+</div>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="jumble.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Jumble</div>
+              </div>
+              <svg><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="madlibs.html">
+              <svg><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Mad libs</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              
+            </div>
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Adventure Game</a><ul>
+<li><a class="reference internal" href="#objectives">Objectives</a></li>
+<li><a class="reference internal" href="#step-by-step-example">Step by Step Example</a></li>
+<li><a class="reference internal" href="#a-more-complicated-example">A More Complicated Example</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/scripts/furo.js"></script>
+    </body>
+</html>

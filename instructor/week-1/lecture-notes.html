@@ -1,0 +1,780 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Lab 1 — Mad Libs" href="lab.html" /><link rel="prev" title="Week 1" href="index.html" />
+
+    <meta name="generator" content="sphinx-4.3.0, furo 2022.06.21"/>
+        <title>Lecture 1 — Introduction to Python - Beginning Python</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/student.css" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  --color-brand-primary: #f45429;
+  --color-brand-content: #724bff;
+  --color-highlight-on-target: #FFD9CD;
+  --color-admonition-title--important: #FF52A9;
+  --color-admonition-title-background--important: #FF52A925;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #282828;
+  --color-code-foreground: #dddddd;
+  --color-brand-primary: #ffaa22;
+  --color-brand-content: #7aadd4;
+  --color-highlight-on-target: #ffaa2233;
+  --color-admonition-title--important: #FF52A9;
+  --color-admonition-title-background--important: #FF52A925;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #282828;
+  --color-code-foreground: #dddddd;
+  --color-brand-primary: #ffaa22;
+  --color-brand-content: #7aadd4;
+  --color-highlight-on-target: #ffaa2233;
+  --color-admonition-title--important: #FF52A9;
+  --color-admonition-title-background--important: #FF52A925;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">Beginning Python</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  
+  <span class="sidebar-brand-text">Beginning Python</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Week 1</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Lecture 1 — Introduction to Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lab.html">Lab 1 — Mad Libs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../week-2/index.html">Week 2</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../week-3/index.html">Week 3</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../week-3/lecture-notes.html">Lecture Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../week-4.html">Week 4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week-5.html">Week 5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week-6.html">Week 6</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../week-7.html">Week 7</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Projects</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../projects/hangman.html">Hangman</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../projects/madlibs.html">Mad libs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../projects/adventure.html">Adventure Game</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../projects/jumble.html">Jumble</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://futurecoder.io">Future Coder</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://openbookproject.net/thinkcs/python/english3e/">Textbook</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://forms.gle/RAvLDnSq6M1gasqs8">Feedback</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="lecture-1-introduction-to-python">
+<h1>Lecture 1 — Introduction to Python<a class="headerlink" href="#lecture-1-introduction-to-python" title="Permalink to this headline">#</a></h1>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p><strong>Warm up</strong></p>
+<ul class="simple">
+<li><p>Circle up and introduce</p>
+<ul>
+<li><p>Name</p></li>
+<li><p>Favorite game—video game, board game, sport, etc.</p></li>
+</ul>
+</li>
+</ul>
+<p>TIMECHECK: 7 minutes</p>
+<p><strong>Introduction</strong></p>
+<ul class="simple">
+<li><p>Course overview</p>
+<ul>
+<li><p>Goals</p>
+<ul>
+<li><p>Have fun</p></li>
+<li><p>Make some cool projects</p></li>
+<li><p>Learn general programming concepts</p></li>
+<li><p>Gain an understanding of the Python language</p></li>
+</ul>
+</li>
+<li><p>Disclaimer</p>
+<ul>
+<li><p>This is my first time teaching this</p></li>
+<li><p>We may not get to all the material I prepared for today and <em>that's ok</em></p></li>
+<li><p>I'm learning from this as much as all of you / y'all are</p></li>
+<li><p>Feedback form on the website</p></li>
+</ul>
+</li>
+<li><p>What to do if stuck / confused</p>
+<ul>
+<li><p>Check the lecture notes</p></li>
+<li><p>Ask someone next to you</p></li>
+<li><p>Raise hand / get my attentio</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Timecheck: 10 minutes</p>
+<p><strong>Fill out a madlib as a group</strong></p>
+<p>Timecheck: 15 minutes</p>
+</div>
+<section id="vscode">
+<span id="id1"></span><h2>VSCode<a class="headerlink" href="#vscode" title="Permalink to this headline">#</a></h2>
+<p>VSCode is a popular choice of application for developing Python that lets us browse files, edit text, see problems with code in real time, and execute programs.</p>
+<p><img alt="VSCode Interface" src="../_images/vscode-interface.png" /></p>
+<p>The interface has 3 main regions, shown in purple, green, and orange:</p>
+<p><img alt="VSCode Interface with markings to show the main regions" src="../_images/vscode-interface-annotated.png" /></p>
+<ol class="arabic simple">
+<li><p>The file explorer (purple 🟪)</p>
+<ul class="simple">
+<li><p>Shows a tree view of the current folder</p></li>
+<li><p>Selecting a file here will open it in the editor</p></li>
+<li><p>Can be opened/closed by pressing either button circled in purple</p></li>
+</ul>
+</li>
+<li><p>The editor (green 🟩)</p>
+<ul class="simple">
+<li><p>Where we interact with files and write code</p></li>
+</ul>
+</li>
+<li><p>Console area (orange 🟧)</p>
+<ul class="simple">
+<li><p>Shows outputs from our code</p></li>
+<li><p>Can be opened/closed by clicking the top right button circled in orange</p></li>
+<li><p>Has 4 different tabs but we will only use the &quot;Terminal&quot; tab (red 🟥)</p>
+<ul>
+<li><p>The terminal lets us run commands and see output</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<p>Other elements of the interface:</p>
+<ul class="simple">
+<li><p>The arrows in the top bar (&lt;- -&gt;) navigate back / forward through editors</p></li>
+<li><p>The gear (⚙️) in the bottom left corner opens settings</p></li>
+</ul>
+</section>
+<section id="the-interactive-interpreter-console">
+<h2>The Interactive Interpreter (Console)<a class="headerlink" href="#the-interactive-interpreter-console" title="Permalink to this headline">#</a></h2>
+<p>Python has an interactive interpreter that allows you to type code and immediately see the result of evaluating that line.</p>
+<p>We can launch the interpreter by running the command <code class="docutils literal notranslate"><span class="pre">python</span></code> in the terminal (see <a class="reference internal" href="#vscode"><span class="std std-ref">VSCode</span></a> if you're not sure where the terminal is):</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>% python
+Python 3.11.1 ... (a bunch of debug info)
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+&gt;&gt;&gt;
+</pre></div>
+</div>
+<p>Here’s an example of adding two numbers in the interpreter:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="go">2</span>
+</pre></div>
+</div>
+<p>Pressing the return key tells Python to evaluate the line.</p>
+<section id="exiting">
+<h3>Exiting<a class="headerlink" href="#exiting" title="Permalink to this headline">#</a></h3>
+<p>When you are finished using the interpreter, type <code class="docutils literal notranslate"><span class="pre">exit()</span></code> and press the return key to exit the interpreter.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">exit</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="syntax">
+<span id="id2"></span><h2>Syntax<a class="headerlink" href="#syntax" title="Permalink to this headline">#</a></h2>
+<p><em>Syntax</em> is the term we use to describe the specific characters, symbols, spacing, or combinations of characters/symbols/spaces that we need to use for a programming language to understand what we are saying. Programming languages are much less skilled at understanding written text than humans, so we need to be very precise for them to understand.</p>
+<section id="examples-in-english">
+<h3>Examples in English<a class="headerlink" href="#examples-in-english" title="Permalink to this headline">#</a></h3>
+<p>We can apply the concept of syntax to english writing to ground the idea of syntax in some concepts you may already be familiar with:</p>
+<ul>
+<li><p>Sentences must start with a capital letter, and must end with <code class="docutils literal notranslate"><span class="pre">.</span></code>, <code class="docutils literal notranslate"><span class="pre">?</span></code>, or <code class="docutils literal notranslate"><span class="pre">!</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>This is a sentence.
+This sentence coveys excitement!
+Does this sentence ask a question?
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>This rules help us easily understand where sentences begin and end, and allows us to skip ahead or backwards by looking for punctuation and capitalization.</p></li>
+</ul>
+</li>
+<li><p>Peoples name's are capitalized.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Bobby</span>
+<span class="n">Will</span>
+<span class="n">Sofia</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>This rule helps us know if a word like 'White' is someone's last name, or a color, for instance; the phrases &quot;the Rich family&quot; versus &quot;the rich family&quot; have a different meaning.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="examples-in-python">
+<h3>Examples in Python<a class="headerlink" href="#examples-in-python" title="Permalink to this headline">#</a></h3>
+<p>For example, the python syntax for adding two numbers is to write each number with a plus symbol (<code class="docutils literal notranslate"><span class="pre">+</span></code>) in between, with any amount of spaces optionally included between the plus symbol and the numbers.</p>
+<p>These are all valid syntaxes (and have the same meaning):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">1</span><span class="o">+</span><span class="mi">1</span>
+<span class="go">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="go">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mi">1</span> <span class="o">+</span><span class="mi">1</span>
+<span class="go">2</span>
+</pre></div>
+</div>
+<p>However, these do not follow the syntax and are invalid:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">1</span> <span class="mi">1</span> <span class="o">+</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>
+    <span class="mi">1</span> <span class="mi">1</span> <span class="o">+</span>
+      <span class="p p-Marker">^</span>
+<span class="gr">SyntaxError</span>: <span class="n">invalid syntax</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="o">+</span> <span class="mi">1</span> <span class="mi">1</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>
+    <span class="o">+</span> <span class="mi">1</span> <span class="mi">1</span>
+        <span class="p p-Marker">^</span>
+<span class="gr">SyntaxError</span>: <span class="n">invalid syntax</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="strings">
+<h2>Strings<a class="headerlink" href="#strings" title="Permalink to this headline">#</a></h2>
+<p>&quot;String&quot; is another word for &quot;text&quot; (because text is just a <em>string</em> of characters all <em>strung</em> together in a row).</p>
+<p>Sentences and words and letters are all strings, but numbers can be strings too! Strings can contain any displayable character you can type with a keyboard. These are all strings:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;This is a string!&quot;</span>
+<span class="s2">&quot;@#///$!&quot;</span>
+<span class="s2">&quot;87&quot;</span>
+<span class="s2">&quot;---&quot;</span>
+<span class="s2">&quot;:)&quot;</span>
+</pre></div>
+</div>
+<section id="combining-strings">
+<span id="id3"></span><h3>Combining strings<a class="headerlink" href="#combining-strings" title="Permalink to this headline">#</a></h3>
+<p>We can combine multiple strings into one using the plus symbol, <code class="docutils literal notranslate"><span class="pre">+</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;abc&quot;</span> <span class="o">+</span> <span class="s2">&quot;def&quot;</span>
+<span class="go">&#39;abcdef&#39;</span>
+</pre></div>
+</div>
+<p>This might be useful for constructing a date:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;January&quot;</span> <span class="o">+</span> <span class="s2">&quot;16th&quot;</span> <span class="o">+</span> <span class="s2">&quot;2023&quot;</span>
+<span class="go">&#39;January16th2023&#39;</span>
+</pre></div>
+</div>
+<p>We can add some spaces to make it look a little nicer:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;January&quot;</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="s2">&quot;16th&quot;</span> <span class="o">+</span> <span class="s2">&quot;, &quot;</span> <span class="o">+</span> <span class="s2">&quot;2023&quot;</span>
+<span class="go">&#39;January 16th, 2023&#39;</span>
+</pre></div>
+</div>
+<section id="what-about-using-with-numbers">
+<span id="failed-concatenation"></span><h4>What about using <code class="docutils literal notranslate"><span class="pre">+</span></code> with numbers?<a class="headerlink" href="#what-about-using-with-numbers" title="Permalink to this headline">#</a></h4>
+<p>What happens if we try to build a date using a number?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;January&quot;</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="mi">16</span> <span class="o">+</span> <span class="s2">&quot;th&quot;</span>
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+<span class="gr">TypeError</span>: <span class="n">can only concatenate str (not &quot;int&quot;) to str</span>
+</pre></div>
+</div>
+<p>We get an error! The message &quot;can only concatenate str (not 'int') to str&quot; is telling us that the plus operator, <code class="docutils literal notranslate"><span class="pre">+</span></code>, is not defined when providing a string and a number (although we can combine 2 strings or 2 numbers with <code class="docutils literal notranslate"><span class="pre">+</span></code>).</p>
+<p>However, there is a simple way to combine numbers and strings...</p>
+</section>
+</section>
+<section id="formatted-string-literals">
+<span id="f-strings"></span><h3>Formatted string literals<a class="headerlink" href="#formatted-string-literals" title="Permalink to this headline">#</a></h3>
+<p>A <em>formatted string literal</em> (or &quot;format string&quot; for short) allows us to insert things (literals, variables, or expressions) into our strings:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Yoda&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">height</span> <span class="o">=</span> <span class="mf">0.66</span>  <span class="c1"># meters</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> is </span><span class="si">{</span><span class="n">height</span> <span class="o">*</span> <span class="mf">39.37</span><span class="si">}</span><span class="s2"> inches tall and </span><span class="si">{</span><span class="mi">900</span><span class="si">}</span><span class="s2"> years old!&quot;</span>
+<span class="go">&#39;Yoda is 25.9842 inches tall and 900 years old!&#39;</span>
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>See <a class="reference internal" href="#syntax"><span class="std std-ref">Syntax</span></a> for a refresher on what &quot;syntax&quot; means.</p>
+</div>
+<p>The syntax for formatted string literals is as follows:</p>
+<ul class="simple">
+<li><p>Put an <code class="docutils literal notranslate"><span class="pre">f</span></code> right before the first quote (no spaces)</p></li>
+<li><p>Surround any variables, literals, or expressions with curly braces, <code class="docutils literal notranslate"><span class="pre">{</span></code> and <code class="docutils literal notranslate"><span class="pre">}</span></code></p></li>
+</ul>
+<p>Now we can construct our date from above (<a class="reference internal" href="#failed-concatenation"><span class="std std-ref">What about using + with numbers?</span></a>):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="sa">f</span><span class="s2">&quot;January </span><span class="si">{</span><span class="mi">16</span><span class="si">}</span><span class="s2">th&quot;</span>
+<span class="go">&#39;January 16th&#39;</span>
+</pre></div>
+</div>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Do not put any literal strings inside format string or Python will get confused!</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; f&quot;Hello, {&quot;world&quot;}&quot;
+  File &quot;&lt;stdin&gt;&quot;, line 1
+    f&quot;Hello, {&quot;world&quot;}&quot;
+            ^^^^^
+SyntaxError: f-string: expecting &#39;}&#39;
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+<section id="variables">
+<h2>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">#</a></h2>
+<p>While literals are often necessary in a program, they are not very dynamic. Variables allow us to:</p>
+<ul class="simple">
+<li><p>Store a value,</p></li>
+<li><p>Access the value later, and even</p></li>
+<li><p>Change the value as many times as we want!</p></li>
+</ul>
+<section id="example">
+<h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">points</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="sa">f</span><span class="s2">&quot;I have </span><span class="si">{</span><span class="n">points</span><span class="si">}</span><span class="s2"> points!&quot;</span>
+<span class="go">&#39;I have 0 points!&#39;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">points</span> <span class="o">=</span> <span class="mi">100000</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="sa">f</span><span class="s2">&quot;I have </span><span class="si">{</span><span class="n">points</span><span class="si">}</span><span class="s2"> points!&quot;</span>
+<span class="go">&#39;I have 100000 points!&#39;</span>
+</pre></div>
+</div>
+<p>(I added the extra newlines to try to make each separate step more clear.)</p>
+</section>
+<section id="id4">
+<h3>Syntax<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
+<p>To store a value in a variable we write the name of the variable, the equals sign, and then the value:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="mi">32</span>
+</pre></div>
+</div>
+<p>The spaces around the <code class="docutils literal notranslate"><span class="pre">=</span></code> are optional, but highly encouraged!</p>
+<p>To access the value stored in a variable, we just write the name of the variable:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">*</span> <span class="mi">2</span>
+<span class="go">64</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">/</span> <span class="mi">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span>
+<span class="go">16</span>
+</pre></div>
+</div>
+<p>You can assign a new value to a variable as many times as you want!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="mi">3200</span>
+</pre></div>
+</div>
+</section>
+<section id="naming">
+<h3>Naming<a class="headerlink" href="#naming" title="Permalink to this headline">#</a></h3>
+<ol class="arabic simple">
+<li><p>Variable names can contain any of these characters:</p>
+<ul class="simple">
+<li><p>Lowercase letters (<code class="docutils literal notranslate"><span class="pre">a</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span></code>, ... , <code class="docutils literal notranslate"><span class="pre">z</span></code>)</p></li>
+<li><p>Uppercase letters (<code class="docutils literal notranslate"><span class="pre">A</span></code>, <code class="docutils literal notranslate"><span class="pre">B</span></code>, ... , <code class="docutils literal notranslate"><span class="pre">Z</span></code>)</p></li>
+<li><p>An underscore (<code class="docutils literal notranslate"><span class="pre">_</span></code>)</p></li>
+<li><p>Numbers (<code class="docutils literal notranslate"><span class="pre">0</span></code>, <code class="docutils literal notranslate"><span class="pre">1</span></code>, ... <code class="docutils literal notranslate"><span class="pre">9</span></code>)</p></li>
+</ul>
+</li>
+<li><p>Variable names <em>may not begin with a number</em>.</p></li>
+</ol>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<ul class="simple">
+<li><p>What about using a <code class="docutils literal notranslate"><span class="pre">-</span></code> symbol (e.g., <code class="docutils literal notranslate"><span class="pre">my-variable</span></code>)?</p>
+<ul>
+<li><p>ASK: Why doesn't this work</p></li>
+<li><p>This is the syntax for subtracting two variables called <code class="docutils literal notranslate"><span class="pre">my</span></code> and <code class="docutils literal notranslate"><span class="pre">variable</span></code></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Skip in lecture ...</p>
+</div>
+<ol class="arabic" start="3">
+<li><p>Python reserves some special names for itself that you are not allowed to use as names for your variables:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>False      await      else       import     pass
+None       break      except     in         raise
+True       class      finally    is         return
+and        continue   for        lambda     try
+as         def        from       nonlocal   while
+assert     del        global     not        with
+async      elif       if         or         yield
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>... skip in lecture.</p>
+</div>
+<section id="examples">
+<h4>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">#</a></h4>
+<p>Here are some examples of valid names:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">x</span><span class="w"></span>
+<span class="l l-Scalar l-Scalar-Plain">count</span><span class="w"></span>
+<span class="l l-Scalar l-Scalar-Plain">power_level</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Here are some names that will cause errors</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">1person</span><span class="w">      </span><span class="c1"># Variable names cannot start with a number</span><span class="w"></span>
+<span class="l l-Scalar l-Scalar-Plain">class</span><span class="w">        </span><span class="c1"># The name `class` is reserved by Python</span><span class="w"></span>
+<span class="l l-Scalar l-Scalar-Plain">my-variable</span><span class="w">  </span><span class="c1"># The hyphen will be interpreted as a minus sign</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="best-practices">
+<h4>Best practices<a class="headerlink" href="#best-practices" title="Permalink to this headline">#</a></h4>
+<ul>
+<li><p>Write variable names all lower case letters.</p></li>
+<li><p>If a variable name contains multiple words, connect them with underscores—we can't use spaces or python would think each word was a variable name:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">days_in_a_year</span> <span class="o">=</span> <span class="mi">365</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+</section>
+</section>
+<section id="working-with-files">
+<h2>Working with Files<a class="headerlink" href="#working-with-files" title="Permalink to this headline">#</a></h2>
+<p>The interactive interpreter is a convenient way to experiment and iterate on ideas quickly, but is challenging to reuse.</p>
+<p>Alternatively, we can write a series of lines in a file and then evaluate that file all at once.</p>
+<p>Here's an example, in a file:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">current_year</span> <span class="o">=</span> <span class="mi">2023</span>
+<span class="n">message</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;The year is </span><span class="si">{</span><span class="n">current_year</span><span class="si">}</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+<section id="creating-a-new-file-in-vscode">
+<span id="new-file"></span><h3>Creating a new file in VSCode<a class="headerlink" href="#creating-a-new-file-in-vscode" title="Permalink to this headline">#</a></h3>
+<p>To create a new file in VSCode:</p>
+<ol class="arabic simple">
+<li><p>Right click in the file explorer area (left hand side) underneath the existing files (currently <code class="docutils literal notranslate"><span class="pre">hello-world.py</span></code>).
+<img alt="" src="../_images/vscode-new-file.png" /></p></li>
+<li><p>Select <code class="docutils literal notranslate"><span class="pre">New</span> <span class="pre">file...</span></code></p></li>
+<li><p>Type in a name (ending in <code class="docutils literal notranslate"><span class="pre">.py</span></code>)</p></li>
+<li><p>Press enter</p></li>
+</ol>
+</section>
+<section id="running-a-program">
+<h3>Running a program<a class="headerlink" href="#running-a-program" title="Permalink to this headline">#</a></h3>
+<p>In the terminal, run <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">&lt;file</span> <span class="pre">name&gt;</span></code>, where <code class="docutils literal notranslate"><span class="pre">&lt;file</span> <span class="pre">name&gt;</span></code> is the name of the file you authored (for example, <code class="docutils literal notranslate"><span class="pre">year.py</span></code>):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">python</span> <span class="n">year</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<p>Unfortunately our program doesn't have any output, but in the next section we'll see how we can output to the screen!</p>
+</section>
+</section>
+<section id="printing">
+<span id="id5"></span><h2>Printing<a class="headerlink" href="#printing" title="Permalink to this headline">#</a></h2>
+<p>Unlike the interactive interpreter, running a script does not automatically display a value. In order to display values we can use the <code class="docutils literal notranslate"><span class="pre">print</span></code> function. This script:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hi!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Will produce the following output when run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Hi!
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><code class="docutils literal notranslate"><span class="pre">print</span></code> is a function, which we <em>invoke</em> (tell it to run) using parenthesis.</p>
+</div>
+<p>It can be very powerful to combine format string literals with print:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;My name is </span><span class="si">{</span><span class="n">the_real_slim_shady</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<!-- (newlines)=
+## Newlines in Strings
+
+If we try typing a newline inside of a string literal by pressing the return key python will try to evaluate that line by itself, and report at error because there is a `"` missing on the right side of the string:
+
+```python
+>>> "This is my first line.
+  File "<stdin>", line 1
+    "This is my first line.
+    ^
+SyntaxError: unterminated string literal (detected at line 1)
+```
+
+Instead we use the special character `\n` to tell python to put a newline there:
+
+```python
+print("This is my first line.\nThis is my second line")
+```
+
+This produces the output:
+
+```shell
+This is my first line.
+This is my second line
+``` -->
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="lab.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Lab 1 — Mad Libs</div>
+              </div>
+              <svg><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="index.html">
+              <svg><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Week 1</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              
+            </div>
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Lecture 1 — Introduction to Python</a><ul>
+<li><a class="reference internal" href="#vscode">VSCode</a></li>
+<li><a class="reference internal" href="#the-interactive-interpreter-console">The Interactive Interpreter (Console)</a><ul>
+<li><a class="reference internal" href="#exiting">Exiting</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#syntax">Syntax</a><ul>
+<li><a class="reference internal" href="#examples-in-english">Examples in English</a></li>
+<li><a class="reference internal" href="#examples-in-python">Examples in Python</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#strings">Strings</a><ul>
+<li><a class="reference internal" href="#combining-strings">Combining strings</a><ul>
+<li><a class="reference internal" href="#what-about-using-with-numbers">What about using <code class="docutils literal notranslate"><span class="pre">+</span></code> with numbers?</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#formatted-string-literals">Formatted string literals</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#variables">Variables</a><ul>
+<li><a class="reference internal" href="#example">Example</a></li>
+<li><a class="reference internal" href="#id4">Syntax</a></li>
+<li><a class="reference internal" href="#naming">Naming</a><ul>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#best-practices">Best practices</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#working-with-files">Working with Files</a><ul>
+<li><a class="reference internal" href="#creating-a-new-file-in-vscode">Creating a new file in VSCode</a></li>
+<li><a class="reference internal" href="#running-a-program">Running a program</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#printing">Printing</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/scripts/furo.js"></script>
+    </body>
+</html>
