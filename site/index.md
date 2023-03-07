@@ -39,10 +39,10 @@ Drafts:
 
 ```{toctree}
 :caption: Projects
+projects/hangman
 projects/madlibs
 projects/adventure
 projects/jumble
-projects/hangman
 ```
 
 

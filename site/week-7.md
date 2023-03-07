@@ -1,23 +1,25 @@
 # Week 7
 
-## Lab
+## Discussion
 
-### What comes next?
+### Feedback
+
+- How did the course go
+- What worked? and what didn't?
+
+### What next?
 
 - Going deeper into Python
-    - Textbooks
-    - ...?
 - Game programming
-    - Scratch
     - Game Maker Studio
     - Unity
 - Web development
 - Application development (iOS / Android)
 - Exploring other programming languages
-    - C++
-    - Java
-    - Typescript
+- Machine learning
 
+
+## Lab
 
 ### (Continue to) Work on a Project
 - Work on the [tic-tac-toe final project](https://futurecoder.io/course/#IntroducingTicTacToe) from Futurecoder, OR
