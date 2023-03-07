@@ -29,6 +29,7 @@ week-3/index
 week-4
 week-5
 week-6
+week-7
 ```
 
 <!--
@@ -41,6 +42,7 @@ Drafts:
 projects/madlibs
 projects/adventure
 projects/jumble
+projects/hangman
 ```
 
 

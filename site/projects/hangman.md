@@ -3,12 +3,14 @@
 A guided set of instructions for the classic game of hangman!
 
 ```text
-_ _ a p e
-Guess a letter: g
-That is correct!
-
+ +--+
+ O  |
+-|  |
+/ \ |
 g _ a p e
-Guess a letter:
+Guess a letter: r
+Yes! That letter is in the word.
+You win!
 ```
 
 1. Start by opening the [future coder editor](https://futurecoder.io/course/#ide) or creating a new file in vscode (see {ref}`new-file` for a refresher).
